@@ -33,9 +33,9 @@ console.log(totalRewardsUruguayPlayers);
 //Reducida:
 
 let totalRewardsUruguayPlayersReduction = players
-.filter( element => element.country === 'Uruguay')
-.map( element => element.goldenBall + element.goldenBoot)
-.reduce( ((acc,element) => acc + element),0);
+ .filter( element => element.country === 'Uruguay')
+ .map( element => element.goldenBall + element.goldenBoot)
+ .reduce( ((acc,element) => acc + element),0);
 
 console.log(totalRewardsUruguayPlayersReduction);
 
@@ -125,8 +125,8 @@ console.log(amountTotalEeuuForbesList);
 //Reducida:
 
 let amountTotalEeuuTecnologyForbesListReduce = forbesList
-.filter(element => element.country === 'EEUU' &&  element.industry === 'Technology')
-.reduce(((acc, element)=> acc + element.amount),0);
+ .filter(element => element.country === 'EEUU' &&  element.industry === 'Technology')
+ .reduce(((acc, element)=> acc + element.amount),0);
 
 console.log(amountTotalEeuuTecnologyForbesListReduce);
 
@@ -150,8 +150,8 @@ console.log(youngestNoEeuuForbesList);
 //Reducida:
 
 let youngestNoEeuuForbesListReduce = forbesList
-.filter(element=> element.country !== 'EEUU')
-.reduce(((youngest, element)=> {
+ .filter(element=> element.country !== 'EEUU')
+ .reduce(((youngest, element)=> {
     return (youngest.age === undefined || youngest.age >= element.age) ? element: youngest;
 }),{});
 
