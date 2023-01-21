@@ -1,33 +1,74 @@
 
 
-
-
-/* Ejercicio 1:
-
-Dado el siguiente array, muestra por consola
-la suma de premios de los jugadores de uruguay. */
-
-const players = [
-    {name: 'Cristiano Ronaldo', country: 'Portugal', goldenBall: 5 , goldenBoot: 6},
-    {name: 'Lionel Messi', country: 'Argentina', goldenBall: 7, goldenBoot: 4},
-    {name: 'Luis Suárez', country: 'Uruguay', goldenBall : 0, goldenBoot: 2},
-    {name: 'Diego Forlan', country: 'Uruguay', goldenBall :0 , goldenBoot: 2},
-    {name: 'Thierry Henry', country: 'Francia', goldenBall : 0, goldenBoot: 2},
-]
+let operandA = 0;
+let operandB = 0;
+let operator = '';
+let resultado;
 
 
 
-//Solución:
+let elementScreen = document.getElementsByClassName("calculator__result")[0];
 
-let uruguayPlayers = players.filter(element => element.country === 'Uruguay');
+let elementOperand = document.getElementsByClassName('button--operand');
+let elementOperator = document.getElementsByClassName('button--operator');
 
-let rewardsUruguayPlayers = uruguayPlayers.map(element => element.goldenBall + element.goldenBoot);
-
-let totalRewardsUruguayPlayers = rewardsUruguayPlayers.reduce(((acc, element)=> acc + element),0);
-
-console.log(totalRewardsUruguayPlayers);
+let elementClear = document.getElementsByClassName('button--clear')[0];
+let elementEqual = document.getElementsByClassName('button--equal')[0];
 
 
+
+
+let showInResultado = (x)=> {
+    elementScreen.textContent += x;
+};
+
+let clearScreen = ()=>{
+    elementScreen.textContent = '';
+};
+
+let reset = ()=>{
+    elementScreen.textContent = '';
+    operandA = 0;
+    operandB = 0;
+    operator = '';
+
+};
+
+let operate = (x)=>{
+    operandA = elementScreen.textContent;
+    operator = x;
+    showInResultado(x);   
+};
+
+console.log(operandA);
+console.log(operandB);
+console.log(operator);
+
+let equal = ()=>{
+    operandB = elementScreen.textContent[2];
+    resolve();
+};
+
+let resolve = ()=>{
+    let resp = 0;
+    switch (operator) {
+        case "+":
+            resp = parseInt(operandA) + parseInt(operandA)
+            break;
+
+        case "-":
+            resp = parseInt(operandA) - parseInt(operandA)
+            break;
+
+        case "*":
+            resp = parseInt(operandA) * parseInt(operandA)
+            break;
+
+        case "/":
+            resp = parseInt(operandA) / parseInt(operandA)
+            break;
+
+<<<<<<< HEAD
 
 
 //Reducida:
@@ -46,26 +87,21 @@ console.log(totalRewardsUruguayPlayersReduction);
 
 
 //Ejercicio 2: 
+=======
+    }
+>>>>>>> 857a0996d2a33d1e4a67af40dba28b75da12088b
     
-//Dado el siguiente array:
+    elementScreen.textContent = resp;
+};
 
 
-const forbesList = [
-    {name: 'Elon Musk', amount: 219, age: 50, country:'EEUU', company:'Tesla', industry: 'Automotive'},
-    {name: 'Jeff Bezos', amount: 171, age: 58, country:'EEUU', company:'Amazon', industry: 'Technology'},
-    {name: 'Bernard Arnault', amount: 158, age: 73, country:'France', company:'LVMH', industry: 'Fashion'},
-    {name: 'Bill Gates', amount: 129, age: 66, country:'EEUU', company:'Microsoft', industry: 'Technology'},
-    {name: 'Warren Buffet', amount: 118, age: 91, country:'EEUU', company:'Berkshire', industry: 'Finance'},
-    {name: 'Larry Page', amount: 111, age: 49, country:'EEUU', company:'Google', industry: 'Technology'},
-    {name: 'Sergey Brin', amount: 171, age: 58, country:'EEUU', company:'Google', industry: 'Technology'},
-    {name: 'Larry Ellison', amount: 106, age: 77, country:'EEUU', company:'Software', industry: 'Technology'},
-    {name: 'Steve Ballmer', amount: 91, age: 66, country:'EEUU', company:'Microsoft', industry: 'Technology'},
-    {name: 'Mukesh Ambani', amount: 90, age: 64, country:'India', company:'Diversified', industry: 'Finance'},
-];
+
+for(let i = 0; i<elementOperand.length;i++){
+    elementOperand[i].addEventListener('click',function() {showInResultado(elementOperand[i].value)});
+}
 
 
-//1) Muestra por consola el listado de nombres de los millonarios.
-
+<<<<<<< HEAD
 let forbesListName = forbesList.map(element => element.name);
 
 console.log(forbesListName);
@@ -208,5 +244,12 @@ let mediaAgeGoogleMicrosoftForbesList = totalAgeGoogleMicrosoftForbesList/ googl
 let mediaAmountGoogleMicrosoftForbesList = totalAmountGoogleMicrosoftForbesList/ googleMicrosoftForbesList.length;
 
 console.log(mediaAgeGoogleMicrosoftForbesList + ' es la media de edad', mediaAmountGoogleMicrosoftForbesList +' es la media de riqueza');
+=======
+for(let i = 0; i<elementOperator.length;i++){
+    elementOperator[i].addEventListener('click',function() {operate(elementOperator[i].value)});
+}
+>>>>>>> 857a0996d2a33d1e4a67af40dba28b75da12088b
 
+elementClear.addEventListener('click', clearScreen);
 
+elementEqual.addEventListener('click',function() {equal()});
