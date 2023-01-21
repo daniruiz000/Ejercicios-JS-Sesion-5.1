@@ -68,7 +68,6 @@ let resolve = ()=>{
             resp = parseInt(operandA) / parseInt(operandA)
             break;
 
-<<<<<<< HEAD
 
 
 //Reducida:
@@ -86,10 +85,8 @@ console.log(totalRewardsUruguayPlayersReduction);
 
 
 
-//Ejercicio 2: 
-=======
-    }
->>>>>>> 857a0996d2a33d1e4a67af40dba28b75da12088b
+//Ejercicio 2:     }
+
     
     elementScreen.textContent = resp;
 };
@@ -101,7 +98,7 @@ for(let i = 0; i<elementOperand.length;i++){
 }
 
 
-<<<<<<< HEAD
+
 let forbesListName = forbesList.map(element => element.name);
 
 console.log(forbesListName);
@@ -244,12 +241,11 @@ let mediaAgeGoogleMicrosoftForbesList = totalAgeGoogleMicrosoftForbesList/ googl
 let mediaAmountGoogleMicrosoftForbesList = totalAmountGoogleMicrosoftForbesList/ googleMicrosoftForbesList.length;
 
 console.log(mediaAgeGoogleMicrosoftForbesList + ' es la media de edad', mediaAmountGoogleMicrosoftForbesList +' es la media de riqueza');
-=======
+
 for(let i = 0; i<elementOperator.length;i++){
     elementOperator[i].addEventListener('click',function() {operate(elementOperator[i].value)});
 }
->>>>>>> 857a0996d2a33d1e4a67af40dba28b75da12088b
 
 elementClear.addEventListener('click', clearScreen);
 
-elementEqual.addEventListener('click',function() {equal()});
+elementEqual.addEventListener('click',function() {equal()})};
